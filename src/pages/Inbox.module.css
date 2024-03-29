@@ -1,0 +1,41 @@
+.openedMail {
+    color: rgb(50, 127, 37);
+    padding: 5px;
+    border: 1px solid black;
+    background-color: rgb(250, 246, 246);
+}
+
+.notOpenedMail {
+    color: rgb(29, 79, 186);
+    padding: 5px;
+    border: 1px solid black;
+    background: rgb(195, 235, 211);
+}
+
+.navlink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.inboxHeading {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;  
+}
+
+.composeBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.inbox {
+    margin-bottom: 80px;
+}
+
+.content {
+    width: 700px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
