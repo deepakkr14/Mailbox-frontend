@@ -2,6 +2,7 @@ import { mailActions } from "../MailSlice";
 const userEmail = localStorage.getItem("email");
 const userName =userEmail? userEmail.split("@")[0]:"";
 const Url=import.meta.env.VITE_REACT_API_URL
+console.log(Url,'and',`${Url}/geti/${userName}`);
 export const InboxActions = () => {
   return async (dispatch) => {
     try {
