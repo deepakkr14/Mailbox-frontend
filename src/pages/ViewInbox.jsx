@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 function InboxView() {
   const history = useNavigate();
   const dispatch = useDispatch();
-
+  const  REACT_URL=JSON.stringify(import.meta.env.VITE_REACT_API_URL)
   const userEmail = localStorage.getItem("email");
   const userName = userEmail && userEmail.split("@")[0];
   const { id } = useParams();
@@ -29,7 +29,7 @@ function InboxView() {
       setIsLoading(mail._id);
       await sendRequest({
         //   endPoint : `${userName}/inbox/${mail._id}`,
-        url: `http://localhost:3005/deletei/${userName}/${mail._id}`,
+        url: `${REACT_URL}/deletei/${userName}/${mail._id}`,
         method: "DELETE",
       });
       dispatch(mailActions.removeInboxMail(mail._id));

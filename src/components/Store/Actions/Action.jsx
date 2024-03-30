@@ -1,13 +1,13 @@
 import { mailActions } from "../MailSlice";
 const userEmail = localStorage.getItem("email");
 const userName =userEmail? userEmail.split("@")[0]:"";
-
+const Url=JSON.stringify(import.meta.env.VITE_REACT_API_URL)
 export const InboxActions = () => {
   return async (dispatch) => {
     try {
       // console.log('usermane ',userName)
       const responseData = await fetch(
-        `http://localhost:3005/geti/${userName}`
+        `${Url}/geti/${userName}`
       );
 
       // const responseData = await fetch(`https://mailbox-d7010-default-rtdb.firebaseio.com/mail-box/${userName}/inbox.json`);
@@ -25,7 +25,7 @@ export const SentActions = () => {
   return async (dispatch) => {
     try {
       const responseData = await fetch(
-        `http://localhost:3005/gets/${userName}`
+        `${Url}/gets/${userName}`
       );
       // const responseData = await fetch(`https://mailbox-d7010-default-rtdb.firebaseio.com/mail-box/${userName}/sentbox.json`);
       if (responseData.ok) {
@@ -42,7 +42,7 @@ export const TrashActions = () => {
   return async (dispatch) => {
     try {
       const responseData = await fetch(
-        `http://localhost:3005/getT/${userName}`
+        `${Url}/getT/${userName}`
       );
       // const responseData = await fetch(`https://mailbox-d7010-default-rtdb.firebaseio.com/mail-box/${userName}/sentbox.json`);
       if (responseData.ok) {

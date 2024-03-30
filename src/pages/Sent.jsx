@@ -17,6 +17,7 @@ function SentBox() {
   const mails = useSelector(state => state.mails.sentBoxMails);
   const [isLoading, setIsLoading] = useState(null);
   const sendRequest = useHttp();
+  const  REACT_URL=JSON.stringify(import.meta.env.VITE_REACT_API_URL)
   useEffect(() => {
     dispatch(SentActions());   
   }, []);
@@ -24,7 +25,7 @@ function SentBox() {
     try {
       setIsLoading(mail._id);
       await sendRequest({
-        url: `http://localhost:3005/deletes/${userName}/${mail._id}`,
+        url: `${REACT_URL}/deletes/${userName}/${mail._id}`,
         // endPoint : `${userName}/sentbox/${mail.id}`,
         method : 'DELETE'
       })

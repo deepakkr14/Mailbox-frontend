@@ -17,12 +17,14 @@ function Inbox() {
   // console.log(mailsact)
   const userEmail = localStorage.getItem("email");
   const userName = userEmail.split("@")[0];
+  const  REACT_URL=JSON.stringify(import.meta.env.VITE_REACT_API_URL)
+
   const openMail = async (mail) => {
     try {
       dispatch(mailActions.updatedInboxMail(mail));
       await sendRequest({
         // endPoint: `${userName}/inbox/${mail.id}`,
-        url:`http://localhost:3005/update/${userName}/${mail._id}`,
+        url:`${REACT_URL}/update/${userName}/${mail._id}`,
         method: "PUT",
       });
     } catch (error) {
@@ -35,7 +37,7 @@ function Inbox() {
       setIsLoading(mail._id);
       await sendRequest({
         // endPoint: `${userName}/inbox/${mail._id}`,
-        url: `http://localhost:3005/deletei/${userName}/${mail._id}` ,  
+        url: `${REACT_URL}/deletei/${userName}/${mail._id}` ,  
         method: "DELETE",
       });
       setIsLoading(null);

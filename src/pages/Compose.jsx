@@ -21,7 +21,7 @@ const compose = () => {
   const sendRequest = useHttp();
   const userEmail = useSelector((state) => state.auth.userEmail);
   const userName = userEmail && userEmail.split("@")[0];
-
+const  REACT_URL=JSON.stringify(import.meta.env.VITE_REACT_API_URL)
   const toRef = useRef();
   const subjectRef = useRef();
   const [editorHtml, setEditorHtml] = useState("");
@@ -57,7 +57,7 @@ const compose = () => {
 
       // Sending data to the outbox
       const data = await sendRequest({
-        url: `http://localhost:3005/adds/${userName}`,
+        url: `${REACT_URL}/adds/${userName}`,
 
         // endPoint : `${userName}/sentbox`,
         method: "POST",
@@ -81,7 +81,7 @@ const compose = () => {
       };
 
       const dataR = await sendRequest({
-        url: `http://localhost:3005/addi/${receiverName}`,
+        url: `${REACT_URL}/addi/${receiverName}`,
         // endPoint : `${receiverName}/inbox`,
         method: "POST",
         body: receiverMessage,
