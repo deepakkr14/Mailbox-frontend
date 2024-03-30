@@ -1,7 +1,7 @@
 import { mailActions } from "../MailSlice";
 const userEmail = localStorage.getItem("email");
 const userName =userEmail? userEmail.split("@")[0]:"";
-const Url=JSON.stringify(import.meta.env.VITE_REACT_API_URL)
+const Url=import.meta.env.VITE_REACT_API_URL
 export const InboxActions = () => {
   return async (dispatch) => {
     try {

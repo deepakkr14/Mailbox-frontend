@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 function InboxView() {
   const history = useNavigate();
   const dispatch = useDispatch();
-  const  REACT_URL=JSON.stringify(import.meta.env.VITE_REACT_API_URL)
+  const  REACT_URL=import.meta.env.VITE_REACT_API_URL
   const userEmail = localStorage.getItem("email");
   const userName = userEmail && userEmail.split("@")[0];
   const { id } = useParams();

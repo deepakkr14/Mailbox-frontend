@@ -17,8 +17,7 @@ function Inbox() {
   // console.log(mailsact)
   const userEmail = localStorage.getItem("email");
   const userName = userEmail.split("@")[0];
-  const  REACT_URL=JSON.stringify(import.meta.env.VITE_REACT_API_URL)
-
+  const  REACT_URL=import.meta.env.VITE_REACT_API_URL
   const openMail = async (mail) => {
     try {
       dispatch(mailActions.updatedInboxMail(mail));

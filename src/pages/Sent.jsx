@@ -17,7 +17,7 @@ function SentBox() {
   const mails = useSelector(state => state.mails.sentBoxMails);
   const [isLoading, setIsLoading] = useState(null);
   const sendRequest = useHttp();
-  const  REACT_URL=JSON.stringify(import.meta.env.VITE_REACT_API_URL)
+  const  REACT_URL=import.meta.env.VITE_REACT_API_URL
   useEffect(() => {
     dispatch(SentActions());   
   }, []);

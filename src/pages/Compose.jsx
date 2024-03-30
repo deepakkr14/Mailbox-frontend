@@ -21,7 +21,7 @@ const compose = () => {
   const sendRequest = useHttp();
   const userEmail = useSelector((state) => state.auth.userEmail);
   const userName = userEmail && userEmail.split("@")[0];
-const  REACT_URL=JSON.stringify(import.meta.env.VITE_REACT_API_URL)
+const  REACT_URL=import.meta.env.VITE_REACT_API_URL
   const toRef = useRef();
   const subjectRef = useRef();
   const [editorHtml, setEditorHtml] = useState("");
